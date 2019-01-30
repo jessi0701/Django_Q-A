@@ -1,0 +1,14 @@
+{% extends "question/base.html" %}
+{% block bodyblock %}
+    <h1>{{question.title}}</h1>
+    <h3>{{question.content}}</h3>
+    <h5>{{question.create_at}}</h5>
+    
+    <hr>
+    
+    <form action="/questions/{{question.id}}/comment/create/" method="post">
+        <input type="text" name="content"/>
+        <input type="submit" value="Submit"/>
+    </form>
+    
+{% endblock %}
